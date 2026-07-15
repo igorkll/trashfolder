@@ -28,7 +28,11 @@ local function playAudioStream(url)
             break
         end
 
-        local buffer = chunk
+        local buffer = {}
+        for i = 1, #chunk do
+            buffer[i] = string.byte(chunk, i) - 128
+        end
+
         while not speaker.playAudio(buffer) do
             os.pullEvent("speaker_audio_empty")
         end
