@@ -6,7 +6,7 @@ end
 local url = "https://raw.githubusercontent.com/igorkll/trashfolder/main/sound5/output.pcm"
 
 local function playAudioStream(url)
-    local response = http.get(url, nil, true)  -- true для бинарного режима
+    local response = http.get(url, nil, true)
     if not response then
         print("Failed to load: " .. url)
         return
