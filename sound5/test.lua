@@ -3,7 +3,8 @@ if not speaker then
     return
 end
 
-local url = "https://raw.githubusercontent.com/igorkll/trashfolder/main/sound5/output.pcm"
+local args = { ... }
+local url = args[1] or "https://raw.githubusercontent.com/igorkll/trashfolder/main/sound5/output.pcm"
 
 local function playAudioStream(url)
     local response = http.get(url, nil, true)
